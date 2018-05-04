@@ -13,14 +13,14 @@ set $mod Mod4
 set $ALT Mod1
 
 #for i3-gaps
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 0
 gaps inner 13
 gaps outer 13
 set $term --no-startup-id st
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-exec_always --no-startup-id ~/.screenlayout/2kmonitor.sh
+exec_always --no-startup-id ~/.screenlayout/macbookprodisplay.sh
 
 exec --no-startup-id unclutter
 
