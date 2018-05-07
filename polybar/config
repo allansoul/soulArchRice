@@ -10,7 +10,7 @@
 
 [colors]
 ;background = ${xrdb:color0}
-background = #262626
+background = #000000
 background-alt = #383838
 foreground = #e6e6e6
 ;foreground = #dfdfdf
@@ -20,7 +20,7 @@ primary = #b70000
 secondary = #6f0000
 ;secondary = #e60053
 alert = #bd2c40
-cl = #00ff00
+cl = #dfdfdf
 ;fg = ${xrdb:color7}
 ;bg = ${xrdb:color2}
 
@@ -57,7 +57,7 @@ font-2 = Wuncon Siji:pixelsize=9;1
 #modules-left = i3
 modules-left = i3 mpd
 modules-center = date
-modules-right = volume eth
+modules-right = volume eth battery
 #modules-right = home filesystem volume wlan eth battery temperature date
 
 tray-position = right
@@ -144,8 +144,8 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #00ff00
-label-mode-background = ${colors.primary}
+label-mode-foreground = #d5d5d5
+label-mode-background = #5c5c5c
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
@@ -329,31 +329,33 @@ bar-volume-empty-foreground = #808080
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP1
+adapter = AC
 full-at = 98
+poll-interval = 5
 
-;format-charging = Charging... <label-charging>
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${xrdb:color3}
 
-;format-discharging = <label-discharging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+#format-charging = Charging... <label-charging>
+#format-charging = <animation-charging> <label-charging>
+#format-charging-underline = ${xrdb:color3}
 
-#format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+#format-discharging = <label-discharging>
+#format-discharging = <ramp-capacity> <label-discharging>
+#format-discharging-underline = ${self.format-charging-underline}
 
-#ramp-capacity-0 = 
-#ramp-capacity-1 = 
-#ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+#format-full-prefix = "0"
+#format-full-prefix-foreground = ${colors.foreground-alt}
+#format-full-underline = ${self.format-charging-underline}
 
-#animation-charging-0 = 
-#animation-charging-1 = 
-#animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+#ramp-capacity-0 = "-"
+#ramp-capacity-1 = "="
+#ramp-capacity-2 = "="
+#ramp-capacity-foreground = ${colors.foreground-alt}
+
+#animation-charging-0 = "-"
+#animation-charging-1 = "="
+#animation-charging-2 = "="
+#animation-charging-foreground = ${colors.foreground-alt}
+#animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
