@@ -1,0 +1,115 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 0.1.3
+#
+# If you edit this, do not forget to uncomment any lines that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h 
+# The XK_ is not needed. 
+#
+# List of modifier (on my keyboard): 
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+#
+# Another way to specifie a key is to use 'xev' and set the 
+# keycode with c:nnn or the modifier with m:nnn where nnn is 
+# the keycode or the state returned by xev 
+#
+# This file is created by xbindkey_config 
+# The structure is : 
+# # Remark 
+# "command" 
+# m:xxx + c:xxx 
+# Shift+... 
+
+
+
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+
+
+"xbindkeys_show"
+   control+shift + q
+
+# set directly keycode (here control + f with my keyboard)
+"xterm"
+   c:41 + m:0x4
+
+# specify a mouse button
+"xterm"
+   control + b:2
+
+#volup
+"amixer set Master 5%+"
+    m:0x0 + c:123
+    XF86AudioRaiseVolume 
+
+#voldown
+"amixer set Master 5%-"
+    m:0x0 + c:122
+    XF86AudioLowerVolume 
+
+#mute
+"amixer set Master toggle"
+    m:0x0 + c:121
+    XF86AudioMute 
+
+#shutdown
+"sudo shutdown now"
+    m:0x45 + c:53
+    Control+Shift+Mod4 + x 
+
+#ncmpcpp
+"st ncmpcpp"
+    m:0x41 + c:58
+    Shift+Mod4 + m 
+
+#qutebrowse
+"qutebrowser"
+    m:0xc + c:24
+    Control+Alt + q 
+
+#play-pause
+"mpc toggle"
+    m:0x0 + c:172
+    XF86AudioPlay 
+
+#kodi
+"kodi-standalone"
+    m:0x40 + c:172
+    Mod4 + XF86AudioPlay 
+
+#calculator
+"qalculate-gtk"
+    m:0x0 + c:148
+    XF86Calculator 
+
+#Reboot
+"sudo reboot now"
+    m:0x45 + c:22
+    Control+Shift+Mod4 + BackSpace 
+
+#Netflix
+"qtwebflix -n"
+    m:0x4 + c:172
+    Control + XF86AudioPlay 
+
+#ncmpcpp
+"st ncmpcpp"
+    m:0x40 + c:58
+    Mod4 + m 
+
+#pavucontrol
+"pavucontrol"
+    m:0x50 + c:33
+    Mod2+Mod4 + p 
+
+#
+# End of xbindkeys configuration
