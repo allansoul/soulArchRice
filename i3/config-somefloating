@@ -34,8 +34,7 @@ exec --no-startup-id ~/mounthome.sh
 
 exec --no-startup-id st
 
-
-# #---Dropdown Windows---# #
+# for Specific programs behaviours
 
 for_window [Class="Calculator"] move scratchpad
 for_window [Class="Calculator"] resize set 300 350
@@ -44,19 +43,15 @@ exec --no-startup-id liri-calculator
 
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] resize set 625 500
-#for_window [instance="dropdown"] move position center
 bindsym $mod+t [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 exec --no-startup-id $term -n dropdown -e tmux
 
 for_window [Class="mpv"] floating enable
+assign [Class="mpv"] $ws10
 
-#for_window [instance="dropdown_*"] sticky enable
-#for_window [instance="dropdown_liri-calculator"] resize set 800 300
-#for_window [instance="dropdown_st"] border pixel 3
-#for_window [instance="dropdown_dropdowncalc"] border pixel 2
-
-
-
+# for kodi
+for_window [class="^Kodi$"] fullscreen enable
+assign [class="^Kodi$"] $ws5
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
