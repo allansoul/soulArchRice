@@ -55,9 +55,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=9;1
 
 #modules-left = i3
-modules-left = i3 mpd
+modules-left = i3 openweathermap-detailed weather
 modules-center = date
-modules-right = filesystem volume eth battery
+modules-right = filesystem volume eth
 #modules-right = home filesystem volume wlan eth battery temperature date
 
 tray-position = right
@@ -261,7 +261,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s3
+interface = enp63s0
 interval = 3.0
 
 format-connected-underline = #008000
@@ -416,3 +416,13 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+[module/weather]
+type = custom/script
+exec = weather-bar
+tail = true
+
+[module/openweathermap-detailed]
+type = custom/script
+exec = ~/.config/polybar/opensimple.sh
+interval = 600
+label-font = 5
